@@ -1,26 +1,9 @@
-/*
-				Assignment 1 
-                  Worth 5%
-                Total Assignment is out of 50 marks  
-		Complete all of the questions in this SQL file and submit the file for grading
-                Open this file in SQL Workbench to complete all of the statements
-
-*/
-
-
-
-
-
-/* Question 1 */
 CREATE DATABASE Mydb;
 
-/* Question 2 */
 DROP DATABASE Mydb;
 
-/* Question 3 */
 USE Mydb;
 
-/* Question 4 */
 CREATE TABLE Customers (
     CustomerID INT PRIMARY KEY,
     FirstName VARCHAR(50),
@@ -37,7 +20,6 @@ CREATE TABLE Orders (
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
 );
 
-/* Question 5 */
 INSERT INTO Customers (CustomerID, FirstName, LastName, Email, Address) VALUES 
 (1, 'John', 'Doe', 'john.doe@example.com', '123 Main St'),
 (2, 'Jane', 'Smith', 'jane.smith@example.com', '456 Elm St'),
@@ -52,19 +34,13 @@ INSERT INTO Orders (OrderID, CustomerID, OrderDate, TotalAmount) VALUES
 (104, 4, '2024-02-01', 300.25),
 (105, 5, '2024-02-05', 75.99);
 
-/* Question 6 */
 SELECT * FROM Customers WHERE FirstName LIKE 'J%';
 
-/* Question 7 */
 SELECT * FROM Orders WHERE OrderDate BETWEEN '2024-01-01' AND '2024-01-31';
--- Another equivalent query
 SELECT * FROM Orders WHERE OrderDate >= '2024-01-01' AND OrderDate <= '2024-01-31';
 
-/* Question 8 */
 SELECT * FROM Orders WHERE TotalAmount BETWEEN 100 AND 300 ORDER BY OrderDate ASC, TotalAmount DESC;
 
-/* Question 9 */
 SELECT * FROM Customers WHERE CustomerID IN (1, 2, 3);
--- Using NOT operator for opposite data
 SELECT * FROM Customers WHERE CustomerID NOT IN (1, 2, 3);
 
